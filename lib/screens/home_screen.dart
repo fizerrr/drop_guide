@@ -72,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Center(
-                  child: Image.asset("assets/images/logo.png", height: 70)
+                  child: Image.asset("assets/images/dg.png", height: 70)
                 ),
                 SizedBox(height: 22,),
                 if(isLoading)
