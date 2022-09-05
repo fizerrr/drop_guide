@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 import 'package:flutter/material.dart';
-import 'package:settings_ui/data/data.dart';
-import 'package:settings_ui/screens/detail_screen.dart';
-import 'package:settings_ui/widgets/shoe_card.dart';
+import 'package:Drop_Guide/data/data.dart';
+import 'detail_screen.dart';
+import 'package:Drop_Guide/widgets/shoe_card.dart';
 import 'package:http/http.dart' as http;
 
 
@@ -62,24 +62,29 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
-
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(20),
+            padding: EdgeInsets.all(0.05*screenWidth),
+
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+
                 Center(
-                  child: Image.asset("assets/images/dg.png", height: 70)
+                  child: Image.asset("assets/images/dg.png", width: 0.32*screenWidth)
                 ),
-                SizedBox(height: 22,),
-                if(isLoading)
+
+                SizedBox(height: 0.05*screenWidth,),
+
+                //if(isLoading), niepotrzebne?
                 SizedBox(child: Container(
-                  alignment: Alignment.bottomCenter,
-                  child: isLoading ? CircularProgressIndicator(color: Colors.black,) : _shoeListView() ),
-                ),
+                  alignment: Alignment.center,
+                  child: isLoading ? CircularProgressIndicator(color: Colors.black,) : null),
+                ), // po co owiniete w sizedbox
+                
                 _shoeListView(),
               ],
           ),
@@ -91,8 +96,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   Widget _shoeListView() {
-    print(hs256());
-    getPostData();
+    double screenWidth = MediaQuery.of(context).size.width;
+    
+    getPostData(); //czy to nie powinno być wcześniej w HomeScreen? (używa się tam isLoading)
     return ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
@@ -117,7 +123,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
                 SizedBox(
-                  height: 22,
+                  height: 0.05*screenWidth,
                 )
             ],
           );

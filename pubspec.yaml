@@ -1,4 +1,4 @@
-name: settings_ui
+name: Drop_Guide
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -67,7 +67,6 @@ flutter:
   fonts:
     - family: Roboto
       fonts:
-        - asset: assets/fonts/roboto/Roboto-Thin.ttf
-          weight: 100
+        - asset: assets/fonts/roboto/Roboto-Regular.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

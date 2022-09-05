@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:settings_ui/data/data.dart';
+import 'package:Drop_Guide/data/data.dart';
 
 class ShoeCard extends StatelessWidget {
   final ShoeData shoe;
@@ -9,10 +8,12 @@ class ShoeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Container(
-      padding: const EdgeInsets.all(30),
-      height: 580,
-      width: 580,
+      padding: EdgeInsets.all(0.06*screenWidth),
+      //height: 580,
+      //width: 0.9*screenWidth,
       decoration: BoxDecoration(
         color: Color.fromRGBO(245, 245, 245, 1),
         boxShadow: [
@@ -25,7 +26,7 @@ class ShoeCard extends StatelessWidget {
         ],
         borderRadius: BorderRadius.circular(25),
         image: DecorationImage(
-          image: NetworkImage('${shoe.image}'),
+          image: NetworkImage('${shoe.image}',),
           alignment: Alignment.center,
         ),
       ),
