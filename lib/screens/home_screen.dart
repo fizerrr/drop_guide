@@ -7,16 +7,13 @@ import 'package:Drop_Guide/widgets/shoe_card.dart';
 import 'package:http/http.dart' as http;
 
 
-
-
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-
+  
   String hs256() {
     String token;
     final jwt = JWT(
@@ -62,11 +59,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    getPostData();
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+
           child: Padding(
             padding: EdgeInsets.all(0.05*screenWidth),
 
@@ -79,13 +79,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 SizedBox(height: 0.05*screenWidth,),
 
-                //if(isLoading), niepotrzebne?
-                SizedBox(child: Container(
+                Container(
                   alignment: Alignment.center,
-                  child: isLoading ? CircularProgressIndicator(color: Colors.black,) : null),
-                ), // po co owiniete w sizedbox
+                  child: isLoading ? CircularProgressIndicator(color: Colors.black,) : null
+                ),
                 
                 _shoeListView(),
+
               ],
           ),
         ),
@@ -97,8 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _shoeListView() {
     double screenWidth = MediaQuery.of(context).size.width;
-    
-    getPostData(); //czy to nie powinno być wcześniej w HomeScreen? (używa się tam isLoading)
+      
     return ListView.builder(
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
@@ -107,6 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
         itemBuilder: (context, index) {
           return Column(
             children: [
+
               GestureDetector(
                 onTap: () {
                   Navigator.push(
@@ -118,16 +118,19 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   );
                 },
+
                 child: ShoeCard(
                   shoe: shoesdata[index],
                 ),
               ),
+
                 SizedBox(
                   height: 0.05*screenWidth,
                 )
+
             ],
           );
         }
-        );
+    );
   }
 }

@@ -14,6 +14,7 @@ class ShoeCard extends StatelessWidget {
       padding: EdgeInsets.all(0.06*screenWidth),
       //height: 580,
       //width: 0.9*screenWidth,
+
       decoration: BoxDecoration(
         color: Color.fromRGBO(245, 245, 245, 1),
         boxShadow: [
@@ -24,16 +25,21 @@ class ShoeCard extends StatelessWidget {
             offset: Offset(0, 0), // changes position of shadow
           ),
         ],
+
         borderRadius: BorderRadius.circular(25),
+
         image: DecorationImage(
           image: NetworkImage('${shoe.image}',),
           alignment: Alignment.center,
         ),
       ),
+
       child: Column(
         children: [
+
           Column(
             children: [
+
               Row(
                 children: [
                   Container(
@@ -43,25 +49,29 @@ class ShoeCard extends StatelessWidget {
                       child: Text("${shoe.day}",
                           style: TextStyle(
                             fontFamily: 'Roboto',
-                            color: Colors.grey,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.black,
                             fontSize: 40,
                           )),
                     ),
                   ),
+
                   Container(
                     height: 40,
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: Text(
-                        "${shoe.month} ",
+                        " ${shoe.month} ",
                         style: TextStyle(
                           fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w100,
                           color: Colors.grey,
                           fontSize: 20,
                         ),
                       ),
                     ),
                   ),
+
                   Container(
                       height: 40,
                       child: Align(
@@ -73,42 +83,54 @@ class ShoeCard extends StatelessWidget {
                               color: Colors.grey,
                               fontSize: 15,
                             ),
-                          ))),
+                          )
+                      )
+                  ),
                 ],
               ),
-              Row(children: [
-                Container(
+
+              Row(
+                children: [
+                  Container(
                     child: Text(
-                  "${shoe.application}",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontFamily: 'Roboto',
-                    fontSize: 15,
-                  ),
-                ))
-              ]),
-              Row(children: [
-                Container(
+                      "${shoe.application}",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontFamily: 'Roboto',
+                        fontSize: 15,
+                      ),
+                    )
+                  )
+                ]
+              ),
+
+              Row(
+                children: [
+                  Container(
                     child: Text(
-                  "17:00 ",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontFamily: 'Roboto',
-                    fontSize: 15,
+                      "17:00 ",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontFamily: 'Roboto',
+                        fontSize: 15,
+                      ),
+                    )
                   ),
-                )),
-                Container(
+                  Container(
                     child: Text(
-                  "(${shoe.draw})",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontFamily: 'Roboto',
-                    fontSize: 12,
-                  ),
-                ))
-              ])
+                      "(${shoe.draw})",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontFamily: 'Roboto',
+                        fontSize: 12,
+                      ),
+                    )
+                  )
+                ]
+              )
             ],
           ),
+
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,

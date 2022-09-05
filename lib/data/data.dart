@@ -1,4 +1,3 @@
-//import 'package:flutter/material.dart'; niepotrzebne
 
 class ShoeData {
   final int id;
