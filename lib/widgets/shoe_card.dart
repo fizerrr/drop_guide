@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:drop_guide/data/data.dart';
 
@@ -11,33 +10,66 @@ class ShoeCard extends StatelessWidget {
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
-      padding: EdgeInsets.all(0.06*screenWidth),
-      //height: 580,
-      //width: 0.9*screenWidth,
+      padding: EdgeInsets.all(0.05*screenWidth),
+      height: 0.88*screenWidth,
 
       decoration: BoxDecoration(
         color: Color.fromRGBO(245, 245, 245, 1),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 2,
-            blurRadius: 2,
-            offset: Offset(0, 0), // changes position of shadow
+            color: Colors.black.withOpacity(0.3),
+            spreadRadius: 0,
+            blurRadius: 0.012*screenWidth,
           ),
         ],
 
-        borderRadius: BorderRadius.circular(25),
+        borderRadius: BorderRadius.circular(40),
 
-        image: DecorationImage(
-          image: NetworkImage('${shoe.image}',),
-          alignment: Alignment.center,
-        ),
       ),
 
       child: Column(
         children: [
 
-          Column(
+          Container(
+            height: 0.5*screenWidth,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.fitWidth,
+                alignment: Alignment(0, 0.3),
+                image: NetworkImage('${shoe.image}',),
+              )
+            ),
+          ),
+
+          Expanded(
+            flex: 2,
+            child: Container(
+              //color: Colors.blue,
+              child: Center(
+                child: Text(
+                  'nike x Thundercat FlyCats Red',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 0.06*screenWidth),
+                ),
+              )
+            )
+          ),
+
+          Expanded(
+            flex: 1,
+            child: Container(
+              //color: Colors.red,
+              child: Center(
+                child: Text(
+                  '200\$',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 0.05*screenWidth),
+                ),
+              ),
+            )
+          ),
+
+          /*Column(
             children: [
 
               Row(
@@ -170,7 +202,7 @@ class ShoeCard extends StatelessWidget {
                 ],
               ),
             ],
-          ),
+          ),*/
         ],
       ),
     );

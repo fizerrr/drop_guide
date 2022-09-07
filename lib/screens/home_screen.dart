@@ -5,7 +5,6 @@ import 'package:drop_guide/widgets/shoe_card.dart';
 import 'package:drop_guide/data/logic.dart';
 
 
-
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -13,17 +12,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   
-
-
-
-
-
   List<ShoeData> shoesdata = [];
-
 
   @override
   Widget build(BuildContext context) {
-
 
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -37,11 +29,13 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
 
+                SizedBox(height: 0.05*screenWidth,),
+                
                 Center(
-                  child: Image.asset("assets/images/dg.png", width: 0.32*screenWidth)
+                  child: Image.asset("assets/images/dg.png", width: 0.34*screenWidth /*logo 0: 0.34*screenWidth*/)
                 ),
 
-                SizedBox(height: 0.05*screenWidth,),
+                SizedBox(height: 0.1*screenWidth,),
 
                 _shoeListView(),
 
@@ -55,9 +49,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   Widget _shoeListView() {
+
     if(shoesdata.isEmpty){
       getPostData(shoesdata);
     }
+
     double screenWidth = MediaQuery.of(context).size.width;
 
     return ListView.builder(

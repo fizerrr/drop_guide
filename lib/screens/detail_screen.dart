@@ -5,6 +5,7 @@ class DetailScreen extends StatefulWidget {
   final ShoeData shoeData;
   final String tag;
   DetailScreen({this.shoeData, this.tag});
+  
   @override
   _DetailScreenState createState() => _DetailScreenState();
 }
@@ -15,13 +16,14 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     print(context);
     print(widget.shoeData.name);
     print(widget.shoeData.application);
     print(widget.shoeData.description);
     print(widget);
+
     return Scaffold(
-      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
