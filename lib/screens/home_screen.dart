@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:Drop_Guide/data/data.dart';
+import 'package:drop_guide/data/data.dart';
 import 'detail_screen.dart';
-import 'package:Drop_Guide/widgets/shoe_card.dart';
-import 'package:Drop_Guide/data/logic.dart';
+import 'package:drop_guide/widgets/shoe_card.dart';
+import 'package:drop_guide/data/logic.dart';
 
 
 

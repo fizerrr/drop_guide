@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Drop_Guide/data/data.dart';
+import 'package:drop_guide/data/data.dart';
 
 class DetailScreen extends StatefulWidget {
   final ShoeData shoeData;

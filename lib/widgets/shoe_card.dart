@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:Drop_Guide/data/data.dart';
+import 'package:drop_guide/data/data.dart';
 
 class ShoeCard extends StatelessWidget {
   final ShoeData shoe;
