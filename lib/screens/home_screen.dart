@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:drop_guide/data/data.dart';
 import 'detail_screen.dart';
 import 'package:drop_guide/widgets/shoe_card.dart';
+import 'package:drop_guide/widgets/custom_page_route.dart';
 import 'package:drop_guide/data/logic.dart';
 
 
@@ -70,8 +71,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => DetailScreen(
+                    CustomPageRoute(
+                      child: DetailScreen(
                         shoeData: shoesdata[index],
                       ),
                     ),
