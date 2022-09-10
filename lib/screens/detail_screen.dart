@@ -11,8 +11,8 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
-  List<String> _sizeTags = [];
-  int _selectedTag = 0;
+  //List<String> _sizeTags = [];
+  //int _selectedTag = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +40,6 @@ class _DetailScreenState extends State<DetailScreen> {
                   children: [
 
                     Container(
-                      /*width: double.infinity,
-                      height: 360,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: Color(0xfff5f5f5),
-                      ),*/
                       child: Image.network(
                         widget.shoeData.image,
                         width: screenWidth,
@@ -60,14 +54,13 @@ class _DetailScreenState extends State<DetailScreen> {
                   ],
                 ),
 
-                Center(
-                  child: Text(
+                Text(
                     widget.shoeData.name,
                     style: TextStyle(fontSize: 0.1*screenWidth, fontWeight: FontWeight.w500),
-                  ),
+                    textAlign: TextAlign.center,
                 ),
 
-                /*Container(
+                /*Container(  CHWILOWO NIEUZYWANE
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(200)),
                     color: Color(0xfff5f5f5),

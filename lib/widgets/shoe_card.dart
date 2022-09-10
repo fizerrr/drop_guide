@@ -23,7 +23,7 @@ class ShoeCard extends StatelessWidget {
           ),
         ],
 
-        borderRadius: BorderRadius.circular(40),
+        borderRadius: BorderRadius.circular(0.1*screenWidth),
 
       ),
 
@@ -47,9 +47,11 @@ class ShoeCard extends StatelessWidget {
               //color: Colors.blue,
               child: Center(
                 child: Text(
-                  'nike x Thundercat FlyCats Red',
+                  shoe.name,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 0.06*screenWidth),
+                  style: TextStyle(fontSize: 0.064*screenWidth),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis
                 ),
               )
             )
@@ -61,7 +63,7 @@ class ShoeCard extends StatelessWidget {
               //color: Colors.red,
               child: Center(
                 child: Text(
-                  '200\$',
+                  '${shoe.retail} PLN',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontWeight: FontWeight.w300, fontSize: 0.05*screenWidth),
                 ),
@@ -69,140 +71,6 @@ class ShoeCard extends StatelessWidget {
             )
           ),
 
-          /*Column(
-            children: [
-
-              Row(
-                children: [
-                  Container(
-                    height: 40,
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Text("${shoe.day}",
-                          style: TextStyle(
-                            fontFamily: 'Roboto',
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black,
-                            fontSize: 40,
-                          )),
-                    ),
-                  ),
-
-                  Container(
-                    height: 40,
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Text(
-                        " ${shoe.month} ",
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          fontWeight: FontWeight.w100,
-                          color: Colors.grey,
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  Container(
-                      height: 40,
-                      child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Text(
-                            "${shoe.year} ",
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              color: Colors.grey,
-                              fontSize: 15,
-                            ),
-                          )
-                      )
-                  ),
-                ],
-              ),
-
-              Row(
-                children: [
-                  Container(
-                    child: Text(
-                      "${shoe.application}",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontFamily: 'Roboto',
-                        fontSize: 15,
-                      ),
-                    )
-                  )
-                ]
-              ),
-
-              Row(
-                children: [
-                  Container(
-                    child: Text(
-                      "17:00 ",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontFamily: 'Roboto',
-                        fontSize: 15,
-                      ),
-                    )
-                  ),
-                  Container(
-                    child: Text(
-                      "(${shoe.draw})",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontFamily: 'Roboto',
-                        fontSize: 12,
-                      ),
-                    )
-                  )
-                ]
-              )
-            ],
-          ),
-
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Column(
-                children: [
-                  Container(
-                      margin: EdgeInsets.fromLTRB(0, 380, 0, 0),
-                      padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                      child: Text(
-                        "${shoe.name}",
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          color: Colors.black,
-                          fontSize: 22,
-                        ),
-                      )),
-                  Container(
-                      margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                      child: Text(
-                        "Retail: ${shoe.retail} PLN",
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          color: Colors.black,
-                          fontSize: 12,
-                        ),
-                      )),
-                  Container(
-                      child: Text(
-                    "Resell :${shoe.resell} - 1500 PLN",
-                    style: TextStyle(
-                      fontFamily: 'Roboto',
-                      color: Colors.black,
-                      fontSize: 12,
-                    ),
-                  ))
-                ],
-              ),
-            ],
-          ),*/
         ],
       ),
     );
