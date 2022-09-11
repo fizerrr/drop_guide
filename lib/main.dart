@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Drop Guide',
 
       theme: ThemeData(
-        fontFamily: 'Roboto',
+        fontFamily: 'Inconsolata',
+        scaffoldBackgroundColor: Color.fromRGBO(245, 245, 245, 1),
       ),
 
       home: HomeScreen(),

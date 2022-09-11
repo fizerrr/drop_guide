@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:Drop_Guide/data/data.dart';
+import 'package:drop_guide/data/data.dart';
 import 'detail_screen.dart';
-import 'package:Drop_Guide/widgets/shoe_card.dart';
-import 'package:Drop_Guide/data/logic.dart';
-
+import 'package:drop_guide/widgets/shoe_card.dart';
+import 'package:drop_guide/widgets/custom_page_route.dart';
+import 'package:drop_guide/data/logic.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -13,17 +13,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   
-
-
-
-
-
   List<ShoeData> shoesdata = [];
-
 
   @override
   Widget build(BuildContext context) {
-
 
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -37,11 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Column(
               children: [
 
+                SizedBox(height: 0.05*screenWidth,),
+                
                 Center(
-                  child: Image.asset("assets/images/dg.png", width: 0.32*screenWidth)
+                  child: Image.asset("assets/images/dg.png", width: 0.34*screenWidth /*logo 0: 0.34*screenWidth*/)
                 ),
 
-                SizedBox(height: 0.05*screenWidth,),
+                SizedBox(height: 0.1*screenWidth,),
 
                 _shoeListView(),
 
@@ -55,9 +50,11 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   Widget _shoeListView() {
+
     if(shoesdata.isEmpty){
       getPostData(shoesdata);
     }
+
     double screenWidth = MediaQuery.of(context).size.width;
 
     return ListView.builder(
@@ -74,8 +71,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => DetailScreen(
+                    CustomPageRoute(
+                      child: DetailScreen(
                         shoeData: shoesdata[index],
                       ),
                     ),
