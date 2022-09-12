@@ -51,46 +51,61 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _shoeListView() {
 
-    if(shoesdata.isEmpty){
+    /*if(shoesdata.isEmpty){
       getPostData(shoesdata);
-    }
+    }*/
 
     double screenWidth = MediaQuery.of(context).size.width;
 
-    return ListView.builder(
+    return FutureBuilder(
+      future: getData(),
+      builder: (context, snapshot){
 
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: shoesdata.length,
+        if(snapshot.data == null){
+          return Text(
+            "loading...",
+            style: TextStyle(fontSize: 0.05*screenWidth),
+          );
+        }
+        else{
+          return ListView.builder(
 
-        itemBuilder: (context, index) {
-          return Column(
-            children: [
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: snapshot.data.length,
 
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    CustomPageRoute(
-                      child: DetailScreen(
-                        shoeData: shoesdata[index],
+            itemBuilder: (context, index){
+              return Column(
+              children: [
+
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      CustomPageRoute(
+                        child: DetailScreen(
+                          shoeData: snapshot.data[index],
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
 
-                child: ShoeCard(
-                  shoe: shoesdata[index],
+                  child: ShoeCard(
+                    shoe: snapshot.data[index],
+                  ),
                 ),
-              ),
 
                 SizedBox(
                   height: 0.05*screenWidth,
-                )
+                ),
 
-            ],
+              ],
+            );
+            },
           );
         }
+      }
     );
+
   }
 }
