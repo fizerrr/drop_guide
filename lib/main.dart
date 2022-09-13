@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Inconsolata',
         scaffoldBackgroundColor: Color.fromRGBO(245, 245, 245, 1),
+        hoverColor: Colors.black
       ),
 
       home: HomeScreen(),

@@ -17,18 +17,28 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
+    double startHori;
 
-    print(context);
-    print(widget.shoeData.name);
-    print(widget.shoeData.application);
-    print(widget.shoeData.description);
-    print(widget);
+    //print(context);
+    //print(widget.shoeData.name);
+    //print(widget.shoeData.application);
+    //print(widget.shoeData.description);
+    //print(widget);
 
     return Scaffold(
       //backgroundColor: Colors.red,
       body: SafeArea(
         child: GestureDetector(
-          onHorizontalDragStart: (details) => Navigator.pop(context),
+
+          onHorizontalDragStart: (details) {
+            startHori = details.globalPosition.dx;
+          },
+
+          onHorizontalDragUpdate: (details){
+            if(details.globalPosition.dx - startHori > 0.1*screenWidth){
+              Navigator.pop(context);
+            }
+          },
 
           child: SingleChildScrollView(
 
@@ -94,7 +104,7 @@ class _DetailScreenState extends State<DetailScreen> {
                   SizedBox(
                     height: 5,
                   ),
-
+                  
                   Text(
                     //widget.shoeData.description,
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in sapien ut purus venenatis pellentesque. Aenean consectetur eros eu enim tempor sollicitudin. Phasellus nunc orci, interdum non metus at, fringilla porta lectus. Cras sapien elit, imperdiet vel lectus et, pretium venenatis nunc. Nam luctus volutpat egestas. Nulla eu neque vehicula felis auctor mollis vitae in tortor.',
