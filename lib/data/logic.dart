@@ -1,4 +1,4 @@
-
+import 'dart:async';
 import 'package:http/http.dart' as http;
 import 'package:drop_guide/data/data.dart';
 import 'dart:convert';
@@ -21,13 +21,14 @@ String hs256() {
 
 }
 
+Future<List<ShoeData>> getData() async {
+  var data = await http.get(Uri.parse(url), headers: {'x-access-token': hs256()});
+  var jsonData = json.decode(data.body);
 
-getPostData(List<ShoeData> list) async {
-  bool ready = false;
-  var response = await http.get(Uri.parse(url), headers: {'x-access-token': hs256()});
-  var jsonData = jsonDecode(response.body);
-  for (var el in jsonData) {
-    ShoeData shoeData = ShoeData(
+  List<ShoeData> shoeList = [];
+
+  for(var el in jsonData){
+    ShoeData shoe = ShoeData(
       id: el["id"],
       name: el["name"].toString(),
       description: el["descryption"].toString(),
@@ -42,11 +43,9 @@ getPostData(List<ShoeData> list) async {
       year: el["year"].toString(),
       hour: el["hour"].toString(),
     );
-
-    list.add(shoeData);
-
+    shoeList.add(shoe);
   }
-  ready = true;
 
+  return shoeList;
 }
 
