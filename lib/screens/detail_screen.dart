@@ -151,6 +151,26 @@ class _DetailScreenState extends State<DetailScreen> {
                     ],
                   ),
 
+                  Row(
+                    children: [
+
+                      Expanded(
+                        child: OutlinedButton(
+                          onPressed: () {},
+                          child: Text('${widget.shoeData.application}'),
+                        )
+                      ),
+
+                      Expanded(
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text(widget.shoeData.application),
+                        )
+                      ),
+
+                    ],
+                  )
+
                 ],
               ),
             ),

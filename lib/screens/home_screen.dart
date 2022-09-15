@@ -85,6 +85,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   }())
                 ),*/
 
+                Container(
+                
+                ),
+
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -113,6 +117,17 @@ class _HomeScreenState extends State<HomeScreen> {
         }
       }
     );
+
+  }
+
+  Widget DatePlate(int index, String previousDate, String nextDate){
+
+    if(index == 0){
+      return Text(nextDate);
+    }
+    else if(previousDate == nextDate){
+      return Text(nextDate);
+    }
 
   }
 }
