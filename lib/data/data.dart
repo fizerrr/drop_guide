@@ -14,6 +14,7 @@ class ShoeData {
   String year;
   String hour;
   DateTime datetime;
+  String time;
 
   ShoeData(
       {
@@ -27,7 +28,7 @@ class ShoeData {
         this.url,
         this.draw,
         this.day,
-        this.datetime
+        this.datetime,
       });
 
   String display_date(String category)
