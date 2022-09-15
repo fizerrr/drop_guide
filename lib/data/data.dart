@@ -13,8 +13,55 @@ class ShoeData {
   String day;
   String year;
   String hour;
+  DateTime datetime;
 
   ShoeData(
-      {this.id, this.name, this.description, this.application, this.retail, this.resell, this.image, this.url, this.draw, this.day, this.month, this.year, this.hour});
+      {
+        this.id,
+        this.name,
+        this.description,
+        this.application,
+        this.retail,
+        this.resell,
+        this.image,
+        this.url,
+        this.draw,
+        this.day,
+        this.datetime
+      });
+
+  String display_date(String category)
+  {
+    String category = "date";
+    switch(category)
+    {
+      case "date":
+        return this.datetime.day.toString()+"."+this.datetime.month.toString()+"."+this.datetime.year.toString();
+        break;
+      case "year":
+        return this.datetime.year.toString();
+        break;
+      case "month":
+        return this.datetime.month.toString();
+        break;
+      case "day":
+        return this.datetime.day.toString();
+        break;
+      case "time":
+       String minute = this.datetime.minute.toString();
+       String hour = this.datetime.hour.toString();
+
+        if(hour.length < 2)
+        {
+          minute += "0";
+        }
+
+        return hour + ":" + minute;
+        break;
+
+
+    }
+
+  }
 }
 

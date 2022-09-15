@@ -22,7 +22,7 @@ String hs256() {
 }
 
 Future<List<ShoeData>> getData() async {
-  var data = await http.get(Uri.parse(url), headers: {'x-access-token': hs256()});
+   var data = await http.get(Uri.parse(url));
   var jsonData = json.decode(data.body);
 
   List<ShoeData> shoeList = [];
@@ -30,21 +30,31 @@ Future<List<ShoeData>> getData() async {
   for(var el in jsonData){
     ShoeData shoe = ShoeData(
       id: el["id"],
-      name: el["name"].toString(),
-      description: el["descryption"].toString(),
-      application: el["application"].toString(),
-      retail: el["retail"].toString(),
-      resell: el["resell"].toString(),
-      image: el["image"].toString(),
-      url: el["url"].toString(),
-      draw: el["draw"].toString(),
-      month: el["month"].toString(),
-      day: el["day"].toString(),
-      year: el["year"].toString(),
-      hour: el["hour"].toString(),
+      name: el["name"],
+      description: el["description"],
+      application: el["application"],
+      retail: el["retail"],
+      resell: el["resell"],
+      image: el["image"],
+      url: el["url"],
+      draw: el["draw"],
+      datetime: DateTime.tryParse(el["datetime"].toString()),
     );
     shoeList.add(shoe);
+
   }
+   print(shoeList[0].display_date("date"));
+
+   print(shoeList[0].display_date("year"));
+
+   print(shoeList[0].display_date("month"));
+
+   print(shoeList[0].display_date("day"));
+
+   print(shoeList[0].display_date("time"));
+
+
+
 
   return shoeList;
 }
