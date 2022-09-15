@@ -112,16 +112,14 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
 
                       collapsed: Text(
-                        //widget.shoeData.description,
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in sapien ut purus venenatis pellentesque. Aenean consectetur eros eu enim tempor sollicitudin. Phasellus nunc orci, interdum non metus at, fringilla porta lectus. Cras sapien elit, imperdiet vel lectus et, pretium venenatis nunc. Nam luctus volutpat egestas. Nulla eu neque vehicula felis auctor mollis vitae in tortor.',
+                        widget.shoeData.description,
                         style: TextStyle(fontSize: 0.05*screenWidth, fontWeight: FontWeight.w300),
                         maxLines: 3,
                         overflow: TextOverflow.fade,
                       ),
 
                       expanded: Text(
-                        //widget.shoeData.description,
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in sapien ut purus venenatis pellentesque. Aenean consectetur eros eu enim tempor sollicitudin. Phasellus nunc orci, interdum non metus at, fringilla porta lectus. Cras sapien elit, imperdiet vel lectus et, pretium venenatis nunc. Nam luctus volutpat egestas. Nulla eu neque vehicula felis auctor mollis vitae in tortor.',
+                        widget.shoeData.description,
                         style: TextStyle(fontSize: 0.05*screenWidth, fontWeight: FontWeight.w300),
                       ),
                     ),
