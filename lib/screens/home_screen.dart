@@ -47,14 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
     )
     );
   }
-  Widget _dateView(day,year,datetime,index) {
 
-         String date = day+"."+year;
-         if(index == 0 ||  datetime != datetime){
-           return Text('${date}');
-
-
-  }}
 
   Widget _shoeListView() {
 
@@ -83,13 +76,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 Container(
 
-                  child: _dateView(
-                      snapshot.data[index].datetime.day.toString(),
-                      snapshot.data[index].datetime.year.toString(),
-                      snapshot.data[index].datetime,
-                      index
-                  )
-
+                  child: ((){
+                    String date = snapshot.data[index].datetime.day.toString()+"."+snapshot.data[index].datetime.year.toString();
+                    if(index == 0 ||  snapshot.data[index].datetime != snapshot.data[index-1].datetime){
+                      return Text('${date}');
+                    }
+                  }())
                 ),
 
                 Container(
