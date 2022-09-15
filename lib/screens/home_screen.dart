@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 0.05*screenWidth,),
                 
                 Center(
-                  child: Image.asset("assets/images/dg.png", width: 0.34*screenWidth)
+                  child: Text('drop_guide', style: TextStyle(fontSize: 0.09*screenWidth,))//Image.asset("assets/images/dglogoproba.png", width: 0.5*screenWidth)
                 ),
 
                 SizedBox(height: 0.1*screenWidth,),
@@ -92,6 +92,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 ),
 
+                Container(
+                
+                ),
+
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -120,6 +124,17 @@ class _HomeScreenState extends State<HomeScreen> {
         }
       }
     );
+
+  }
+
+  Widget DatePlate(int index, String previousDate, String nextDate){
+
+    if(index == 0){
+      return Text(nextDate);
+    }
+    else if(previousDate == nextDate){
+      return Text(nextDate);
+    }
 
   }
 }

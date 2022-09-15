@@ -18,7 +18,6 @@ class ShoeCard extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),
-            spreadRadius: 0,
             blurRadius: 0.012*screenWidth,
           ),
         ],
