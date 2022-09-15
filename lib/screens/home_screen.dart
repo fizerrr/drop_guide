@@ -33,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 0.05*screenWidth,),
                 
                 Center(
-                  child: Image.asset("assets/images/dg.png", width: 0.34*screenWidth /*logo 0: 0.34*screenWidth*/)
+                  child: Image.asset("assets/images/dg.png", width: 0.34*screenWidth)
                 ),
 
                 SizedBox(height: 0.1*screenWidth,),
@@ -50,10 +50,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   Widget _shoeListView() {
-
-    /*if(shoesdata.isEmpty){
-      getPostData(shoesdata);
-    }*/
 
     double screenWidth = MediaQuery.of(context).size.width;
 
@@ -77,6 +73,21 @@ class _HomeScreenState extends State<HomeScreen> {
             itemBuilder: (context, index){
               return Column(
               children: [
+
+                /*Container(
+                  child: ((){
+                    if(index == 0){
+                      return Text('data ${snapshot.data[index].day}');
+                    }
+                    else if(snapshot.data[index].day != snapshot.data[index-1].day){
+                      return Text('data ${snapshot.data[index].day}');
+                    }
+                  }())
+                ),
+
+                Container(
+                  child: Text(snapshot.data[index].day),
+                ),*/
 
                 GestureDetector(
                   onTap: () {
