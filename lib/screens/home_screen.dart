@@ -74,16 +74,15 @@ class _HomeScreenState extends State<HomeScreen> {
               return Column(
               children: [
 
-                /*Container(
+                Container(
+
                   child: ((){
-                    if(index == 0){
-                      return Text('data ${snapshot.data[index].display_data("date")}');
-                    }
-                    else if(snapshot.data[index].day != snapshot.data[index-1].day){
-                      return Text('data ${snapshot.data[index].day}');
+                    String date = snapshot.data[index].datetime.day.toString()+"."+snapshot.data[index].datetime.year.toString();
+                    if(index == 0 ||  snapshot.data[index].datetime != snapshot.data[index-1].datetime){
+                      return Text('${date}');
                     }
                   }())
-                ),*/
+                ),
 
                 GestureDetector(
                   onTap: () {
