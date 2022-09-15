@@ -32,7 +32,6 @@ class ShoeData {
 
   String display_date(String category)
   {
-    String category = "date";
     switch(category)
     {
       case "date":

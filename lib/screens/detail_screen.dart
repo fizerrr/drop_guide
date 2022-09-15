@@ -70,15 +70,14 @@ class _DetailScreenState extends State<DetailScreen> {
                         child: Column(
                           children: [
 
-                            SizedBox(height: 10,),
+                            SizedBox(height: 0.025*screenWidth,),
 
                             Container(
                               child: Text(
-                                "24.06.2022\n SNKRS_APP\n 9:00",
+                                "${widget.shoeData.display_date("date")}\n ${widget.shoeData.application}\n ${widget.shoeData.display_date("time")}",
                                 textAlign: TextAlign.right,
                                 style: TextStyle(fontSize: 0.05*screenWidth),
                               ),
-                              //color: Colors.red,
                               alignment: Alignment.topRight,
                             ),
 
@@ -89,10 +88,13 @@ class _DetailScreenState extends State<DetailScreen> {
                     ],
                   ),
 
-                  Text(
-                      widget.shoeData.name,
-                      style: TextStyle(fontSize: 0.1*screenWidth, fontWeight: FontWeight.w500),
-                      textAlign: TextAlign.center,
+                  Container(
+                    width: screenWidth,
+                    child: Text(
+                        widget.shoeData.name,
+                        style: TextStyle(fontSize: 0.09*screenWidth, fontWeight: FontWeight.w500),
+                        textAlign: TextAlign.center,
+                    ),
                   ),
 
                   SizedBox(height: 0.03*screenWidth),
@@ -104,6 +106,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         tapBodyToExpand: true,
                         tapBodyToCollapse: true,
                         useInkWell: false,
+                        tapHeaderToExpand: true,
                       ),
 
                       header: Text(
@@ -113,14 +116,14 @@ class _DetailScreenState extends State<DetailScreen> {
 
                       collapsed: Text(
                         widget.shoeData.description,
-                        style: TextStyle(fontSize: 0.05*screenWidth, fontWeight: FontWeight.w300),
+                        style: TextStyle(fontSize: 0.055*screenWidth, fontWeight: FontWeight.w300),
                         maxLines: 3,
                         overflow: TextOverflow.fade,
                       ),
 
                       expanded: Text(
                         widget.shoeData.description,
-                        style: TextStyle(fontSize: 0.05*screenWidth, fontWeight: FontWeight.w300),
+                        style: TextStyle(fontSize: 0.055*screenWidth, fontWeight: FontWeight.w300),
                       ),
                     ),
                   ),
@@ -139,7 +142,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
                        Expanded(
                         child: Text(
-                          "100 PLN",
+                          "${widget.shoeData.retail}\$",
                           style: TextStyle(fontSize: 0.06*screenWidth, fontWeight: FontWeight.w300),
                           textAlign: TextAlign.right,
                         )

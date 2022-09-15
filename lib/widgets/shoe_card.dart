@@ -44,7 +44,6 @@ class ShoeCard extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Container(
-              //color: Colors.blue,
               child: Center(
                 child: Text(
                   shoe.name,
@@ -60,10 +59,9 @@ class ShoeCard extends StatelessWidget {
           Expanded(
             flex: 1,
             child: Container(
-              //color: Colors.red,
               child: Center(
                 child: Text(
-                  '${shoe.retail} PLN',
+                  '${shoe.retail}\$',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontWeight: FontWeight.w300, fontSize: 0.05*screenWidth),
                 ),

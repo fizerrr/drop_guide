@@ -77,16 +77,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 /*Container(
                   child: ((){
                     if(index == 0){
-                      return Text('data ${snapshot.data[index].day}');
+                      return Text('data ${snapshot.data[index].display_data("date")}');
                     }
                     else if(snapshot.data[index].day != snapshot.data[index-1].day){
                       return Text('data ${snapshot.data[index].day}');
                     }
                   }())
-                ),
-
-                Container(
-                  child: Text(snapshot.data[index].day),
                 ),*/
 
                 GestureDetector(

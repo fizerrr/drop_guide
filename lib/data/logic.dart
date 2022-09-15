@@ -43,18 +43,6 @@ Future<List<ShoeData>> getData() async {
     shoeList.add(shoe);
 
   }
-   print(shoeList[0].display_date("date"));
-
-   print(shoeList[0].display_date("year"));
-
-   print(shoeList[0].display_date("month"));
-
-   print(shoeList[0].display_date("day"));
-
-   print(shoeList[0].display_date("time"));
-
-
-
 
   return shoeList;
 }
