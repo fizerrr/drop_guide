@@ -151,7 +151,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     ],
                   ),
 
-                  Row(
+                  /*Row(
                     children: [
 
                       Expanded(
@@ -169,7 +169,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       ),
 
                     ],
-                  )
+                  )*/
 
                 ],
               ),

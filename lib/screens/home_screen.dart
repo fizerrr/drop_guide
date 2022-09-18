@@ -33,10 +33,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(height: 0.05*screenWidth,),
                 
                 Center(
-                  child: Text('drop_guide', style: TextStyle(fontSize: 0.09*screenWidth,))//Image.asset("assets/images/dglogoproba.png", width: 0.5*screenWidth)
+                  child: Image.asset("assets/images/dglogoproba.png", width: 0.6*screenWidth)
                 ),
 
-                SizedBox(height: 0.1*screenWidth,),
+                SizedBox(height: 0.03*screenWidth,),
 
                 _shoeListView(),
 
@@ -75,17 +75,40 @@ class _HomeScreenState extends State<HomeScreen> {
               children: [
 
                 Container(
-
                   child: ((){
-                    String date = snapshot.data[index].datetime.day.toString()+"."+snapshot.data[index].datetime.year.toString();
+                    String date = snapshot.data[index].datetime.day.toString()+"."+snapshot.data[index].datetime.month.toString();
                     if(index == 0 ||  snapshot.data[index].datetime != snapshot.data[index-1].datetime){
-                      return Text('${date}');
+                      return Column(
+                        children: [
+
+                          SizedBox(height: 0.03*screenWidth,),
+
+                          Container(
+                            width: 0.3*screenWidth,
+                            padding: EdgeInsets.all(0.01*screenWidth),
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                              borderRadius: BorderRadius.circular(0.02*screenWidth),
+                            ),
+                            
+                            child: Text(
+                              date,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: Color.fromRGBO(245, 245, 245, 1),
+                                fontSize: 0.05*screenWidth,
+                              ),
+                            ),
+                          ),
+
+                          SizedBox(height: 0.03*screenWidth,),
+                        ],
+                      );
+                    }
+                    else {
+                      return SizedBox(height: 0.05*screenWidth);
                     }
                   }())
-                ),
-
-                Container(
-                
                 ),
 
                 GestureDetector(
@@ -105,9 +128,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
 
-                SizedBox(
+                /*SizedBox(
                   height: 0.05*screenWidth,
-                ),
+                ),*/
 
               ],
             );
@@ -119,14 +142,4 @@ class _HomeScreenState extends State<HomeScreen> {
 
   }
 
-  Widget DatePlate(int index, String previousDate, String nextDate){
-
-    if(index == 0){
-      return Text(nextDate);
-    }
-    else if(previousDate == nextDate){
-      return Text(nextDate);
-    }
-
-  }
 }
