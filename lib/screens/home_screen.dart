@@ -25,20 +25,27 @@ class _HomeScreenState extends State<HomeScreen> {
         child: SingleChildScrollView(
 
           child: Padding(
-            padding: EdgeInsets.all(0.05*screenWidth),
+            padding: EdgeInsets.all(0.0*screenWidth),
 
             child: Column(
               children: [
 
-                SizedBox(height: 0.05*screenWidth,),
+                SizedBox(height: 0.046*screenWidth,),
                 
                 Center(
-                  child: Image.asset("assets/images/dglogoproba.png", width: 0.6*screenWidth)
+                  child: Image.asset("assets/images/dglogoproba.png", width: 0.55*screenWidth)
                 ),
 
-                SizedBox(height: 0.03*screenWidth,),
+                SizedBox(height: 0.046*screenWidth,),
 
                 _shoeListView(),
+
+                Container(
+                  height: 0.0025*screenWidth,
+                  color: Color.fromRGBO(40, 40, 40, 1),
+                ),
+
+                SizedBox(height: 0.1*screenWidth,)
 
               ],
           ),
@@ -78,35 +85,26 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: ((){
                     String date = snapshot.data[index].datetime.day.toString()+"."+snapshot.data[index].datetime.month.toString();
                     if(index == 0 ||  snapshot.data[index].datetime != snapshot.data[index-1].datetime){
-                      return Column(
-                        children: [
-
-                          SizedBox(height: 0.03*screenWidth,),
-
-                          Container(
-                            width: 0.3*screenWidth,
-                            padding: EdgeInsets.all(0.01*screenWidth),
-                            decoration: BoxDecoration(
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(0.02*screenWidth),
-                            ),
+                      return Container(
+                        width: screenWidth,
+                        padding: EdgeInsets.all(0.009*screenWidth),
+                        color: Color.fromRGBO(40, 40, 40, 1),
                             
-                            child: Text(
-                              date,
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Color.fromRGBO(245, 245, 245, 1),
-                                fontSize: 0.05*screenWidth,
-                              ),
-                            ),
+                        child: Text(
+                          date,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromRGBO(245, 245, 245, 1),
+                            fontSize: 0.056*screenWidth,
                           ),
-
-                          SizedBox(height: 0.03*screenWidth,),
-                        ],
+                        ),
                       );
                     }
                     else {
-                      return SizedBox(height: 0.05*screenWidth);
+                      return Container(
+                        height: 0.0025*screenWidth,
+                        color: Color.fromRGBO(40, 40, 40, 1),
+                      );
                     }
                   }())
                 ),
@@ -127,10 +125,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     shoe: snapshot.data[index],
                   ),
                 ),
-
-                /*SizedBox(
-                  height: 0.05*screenWidth,
-                ),*/
 
               ],
             );

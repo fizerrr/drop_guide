@@ -118,7 +118,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         widget.shoeData.description,
                         style: TextStyle(fontSize: 0.055*screenWidth, fontWeight: FontWeight.w300),
                         maxLines: 3,
-                        overflow: TextOverflow.fade,
+                        overflow: TextOverflow.ellipsis,
                       ),
 
                       expanded: Text(
