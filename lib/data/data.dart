@@ -65,3 +65,14 @@ class ShoeData {
   }
 }
 
+class Size{
+
+  String size;
+  String lowestAsk = 'nd';
+  String highestBid = 'nd';
+  String lastSale = 'nd';
+
+  Size({this.size, this.lowestAsk = 'nd', this.highestBid = 'nd', this.lastSale = 'nd'});
+
+
+}
