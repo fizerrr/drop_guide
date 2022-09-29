@@ -11,26 +11,17 @@ class ShoeCard extends StatelessWidget {
 
     return Container(
       padding: EdgeInsets.all(0.05*screenWidth),
-      height: 0.88*screenWidth,
-
-      decoration: BoxDecoration(
-        color: Color.fromRGBO(245, 245, 245, 1),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            blurRadius: 0.012*screenWidth,
-          ),
-        ],
-
-        borderRadius: BorderRadius.circular(0.1*screenWidth),
-
-      ),
+      height: 0.85*screenWidth,
+      color: Color.fromRGBO(245, 245, 245, 1), 
 
       child: Column(
         children: [
 
+          SizedBox(height: 0.03*screenWidth,),
+
           Container(
-            height: 0.5*screenWidth,
+            height: 0.45*screenWidth,
+            width: 0.77*screenWidth,
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fitWidth,
@@ -40,6 +31,8 @@ class ShoeCard extends StatelessWidget {
             ),
           ),
 
+          SizedBox(height: 0.01*screenWidth,),
+
           Expanded(
             flex: 2,
             child: Container(
@@ -47,7 +40,7 @@ class ShoeCard extends StatelessWidget {
                 child: Text(
                   shoe.name,
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 0.064*screenWidth),
+                  style: TextStyle(fontSize: 0.075*screenWidth),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis
                 ),
@@ -60,9 +53,9 @@ class ShoeCard extends StatelessWidget {
             child: Container(
               child: Center(
                 child: Text(
-                  '${shoe.retail}\$',
+                  "${shoe.retail}\$",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 0.05*screenWidth),
+                  style: TextStyle(fontWeight: FontWeight.w300, fontSize: 0.056*screenWidth),
                 ),
               ),
             )
